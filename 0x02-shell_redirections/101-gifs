@@ -1,2 +1,2 @@
 #!/bin/basih
-find . -type f -name "*.gif"
+find . -type f -name "*.gif" | LC_ALL=C sort -f | awk -F/ '{gsub(/\.[^.]+$/, "", $NF); print $NF}'
