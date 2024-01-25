@@ -6,7 +6,7 @@ while [ $number_of_times -lt 10 ]
 do
     if [ $number_of_times -eq 9 ]
     then
-        echo "hi"
+        echo "Hi"
     fi
     echo "Best School"
     ((number_of_times++))
