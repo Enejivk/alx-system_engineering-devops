@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Displaying hi at the ninth value
+
+number_of_times=0
+while [ $number_of_times -lt 10 ]
+do
+    if [ $number_of_times -eq 9 ]
+    then
+        echo "hi"
+    fi
+    echo "Best School"
+    ((number_of_times++))
+done
