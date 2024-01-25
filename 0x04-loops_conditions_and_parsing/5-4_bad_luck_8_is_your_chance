@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#Displaying number from one to eight at four print bad luck and good luck for 8
+
+number_of_times=1
+while [ $number_of_times -lt 11 ]
+do
+    if [ $number_of_times -eq 4 ]
+        then
+            echo "bad luck"
+    elif [ $number_of_times -eq 8 ]
+        then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    ((number_of_times++))
+done
