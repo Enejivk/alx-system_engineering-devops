@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
 
-for (( i=0; i<10; i++ ))
+number_of_times=0
+while [ $number_of_times -lt 10 ]
 do
     echo "Best School"
+    ((number_of_times++))
 done
