@@ -4,24 +4,18 @@
 #displays 9 and then bad luck from Japan for the 9th loop iteration
 #displays 17 and then bad luck from Italy for the 17th loop iteration
 
-number_of_times=1
-while [ $number_of_times -lt 21 ]
+number_of_times=0
+while [ $number_of_times -lt 20 ]
 do
-    echo "$number_of_times"
-    if [ $number_of_times -eq 4 ]
-        then
-            echo "bad luck from China"
-        fi
-
-    if [ $number_of_times -eq 9 ]
-        then
-            echo "bad luck from Japan"
-        fi
-        
-    if [ $number_of_times -eq 17 ]
-        then
-            echo "bad luck from Italy"
-        fi
-
     ((number_of_times++))
+    echo "$number_of_times"
+    case $number_of_times in
+    4 )
+        echo "bad luck from China";;
+    9 )
+        echo "bad luck from Japan";;
+    17 )
+        echo "bad luck from Italy";;
+    * )
+esac
 done
