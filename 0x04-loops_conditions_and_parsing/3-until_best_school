@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#print Best schools ten times using until loop
+
+number_of_times=1
+until [ $number_of_times -gt 10 ]
+do
+    echo "Best School"
+    ((number_of_times++))
+done
