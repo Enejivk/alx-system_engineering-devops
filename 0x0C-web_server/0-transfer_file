@@ -9,5 +9,5 @@ else
     IP_OF_SERVER=$2
     REMOTE_USER=$3
     PATH_TO_SSH_KEY=$4
-    scp -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$REMOTE_USER@$IP_OF_SERVER:"
+    scp -o StrictHostKeyChecking=no -i "$PATH_TO_SSH_KEY" "$PATH_TO_FILE" "$REMOTE_USER@$IP_OF_SERVER:"
 fi
