@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script that log me into a remote server
+
+ssh ~/.ssh/school ubuntu@100.25.144.203
