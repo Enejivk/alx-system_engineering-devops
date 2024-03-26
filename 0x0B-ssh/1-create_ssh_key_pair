@@ -1,3 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Bash script that create an ssh key and saved it into a file
 
 ssh-keygen -t rsa -b 4096 -N betty -f school
