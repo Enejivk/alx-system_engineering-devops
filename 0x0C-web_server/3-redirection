@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+replaceText="rewrite ^/redirect_me https://github.com/enejivk permanent;"
+sed -i "s|server_name _;|$replaceText|g" /etc/nginx/sites-available/default
+
+sudo service nginx start
