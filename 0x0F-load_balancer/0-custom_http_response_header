@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#Bash script that configure a new server
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+replaceText="rewrite ^/redirect_me https://github.com/enejivk permanent;"
+sed -i "s|server_name _;|&\n\t$replaceText\n|g" /etc/nginx/sites-available/default 
+
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+errorPage="error_page 404 404.html;\n\tlocation = /404.html;\n\t\troot /var/www/html;\n\t\tinternal;"
+sed -i "s|server_name _;|&\n\t$errorPage\n|g" /etc/nginx/sites-available/default
+
+header="add_header X-Served-By '515457-web-02';"
+sed -i "s|server_name _;|&\n\t$header\n|g" /etc/nginx/sites-available/default
+
+sudo service nginx restart
