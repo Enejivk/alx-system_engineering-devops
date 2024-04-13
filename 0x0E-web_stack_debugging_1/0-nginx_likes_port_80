@@ -3,4 +3,5 @@
 
 string="listen 80"
 sed -i "s|listen [0-9]\+|$string|g" /etc/nginx/sites-available/default
+sudo service nginx restart
 
