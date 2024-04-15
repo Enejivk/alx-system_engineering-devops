@@ -2,5 +2,5 @@
 # configures a server to listening on port 80 of all server's active IPv4 IPs
 
 string="listen 80"
-sed -i "s|listen [0-9]\+|$string|g" /etc/nginx/sites-available/default
+sudo sed -i "s|listen [0-9]\+|$string|g" /etc/nginx/sites-available/default
 sudo service nginx restart
