@@ -5,7 +5,8 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
 
-replaceText="rewrite ^/redirect_me https://github.com/enejivk permanent;"
+replaceText="rewrite ^/redirect_me$ https://github.com/enejivk permanent;"
 sed -i "s|server_name _;|&\n\t$replaceText|g" /etc/nginx/sites-available/default
 
 sudo service nginx start
+
