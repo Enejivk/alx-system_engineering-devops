@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#Redirecting a traffic to an alternative websit
+# Redirecting traffic to an alternative website
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
 
-replaceText="rewrite ^/redirect_me https://github.com/enejivk permanent;"
-sed -i "s|server_name _;|&\n\t$replaceText|g" /etc/nginx/sites-available/default
+replaceText="rewrite ^/redirect_me https:\/\/github.com\/enejivk permanent;"
+sudo sed -i "s|server_name _;|&\n\t$replaceText|g" /etc/nginx/sites-available/default
 
-sudo service nginx start
+sudo systemctl start nginx
