@@ -1,4 +1,4 @@
-Host web-01
+Host school
 	Hostname 3.90.85.19
 	User ubuntu
 	PasswordAuthentication no
