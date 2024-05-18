@@ -3,13 +3,14 @@
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
+sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
 
 replaceText="rewrite ^/redirect_me https://github.com/enejivk permanent;"
-sed -i "s|server_name _;|$replaceText|g" /etc/nginx/sites-available/default
+sudo sed -i "s|server_name _;|&\n\t$replaceText|g"  /etc/nginx/sites-available/default
 
 
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-errorPage="error_page 404 404.html;\n\tlocation = /404.html;\n\t\troot /var/www/html;\n\t\tinternal;"
-sed -i "s|server_name _;|&\n\t\$errorPage|g" /etc/nginx/sites-available/default
+sudo sh -c 'echo "Ceci n'\''est pas une page" > /var/www/html/404.html'
+errorPage="error_page 404 404.html;\n\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}\n"
+sudo sed -i "s|server_name _;|&\n\t$errorPage|g" /etc/nginx/sites-available/default
 
 sudo service nginx start
