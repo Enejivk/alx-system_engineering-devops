@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-#Redirecting a traffic to an alternative websit
+#Configure a new Nginx server so that /redirect_me is redirecting to another page
 
 sudo apt-get -y update
 sudo apt-get -y install nginx
-sudo bash -c 'echo "Hello World!" > /var/www/html/index.html'
-
-replaceText="rewrite ^/redirect_me https://github.com/enejivk permanent;"
-sudo sed -i "s|server_name _;|&\n\t$replaceText|g" /etc/nginx/sites-available/default
-sudo service nginx start
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World" | sudo tee /var/www/html/index
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
