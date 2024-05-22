@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Export the content as json"""
 
-import requests
 import csv
+import requests
 import sys
 
 if __name__ == '__main__':
