@@ -26,7 +26,7 @@ if __name__ == "__main__":
             else:
                 incompletely_task += 1
 
-    print(f"Employee EMPLOYEE_NAME is done with tasks(
+    print(f"Employee EMPLOYEE_NAME is done with tasks(\
         {completed_task}/{total_task}): ")
     for title_task_item in task_title:
         print('\t', title_task_item)
