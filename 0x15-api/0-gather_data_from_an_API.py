@@ -20,12 +20,13 @@ if __name__ == "__main__":
     for task in task_respond:
         if task.get('userId') == id:
             total_task += 1
-            if task.get('completed') == True:
+            if task.get('completed') is True:
                 task_title.append(task.get('title'))
                 completed_task += 1
             else:
                 incompletely_task += 1
 
-    print(f"Employee EMPLOYEE_NAME is done with tasks({completed_task}/{total_task}):")
+    print(f"Employee EMPLOYEE_NAME is done with tasks(
+        {completed_task}/{total_task}): ")
     for title_task_item in task_title:
         print('\t', title_task_item)
