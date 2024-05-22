@@ -18,5 +18,8 @@ if __name__ == '__main__':
         csv_writer = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in tasks:
             if task.get('userId') is id:
-                csv_writer.writerow([task.get('userId'), username,
-                                    task.get('completed'), task.get('title')])
+                csv_writer.writerow([
+                    task.get('userId'),
+                    username,
+                    task.get('completed'),
+                    task.get('title')])
